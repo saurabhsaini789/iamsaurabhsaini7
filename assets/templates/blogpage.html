@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1E43J6JSQY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-1E43J6JSQY');
+  </script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>blogpage</title>
+  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+  <link rel="icon" href="./favicon.ico" type="image/png">
+  <link rel="apple-touch-icon" href="./favicon.ico">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    .projects-quick-nav-sidebar {
+      margin: 1.75rem 0 0;
+      padding: 1.25rem 1.1rem;
+      background: rgba(15, 17, 21, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+    }
+
+    .projects-quick-nav-sidebar__title {
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.72);
+      margin: 0;
+    }
+
+    .projects-quick-nav-sidebar__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .projects-quick-nav-sidebar__link {
+      display: block;
+      padding: 0.65rem 0.8rem;
+      border-radius: 10px;
+      background: linear-gradient(
+          rgba(5, 6, 8, 0.55),
+          rgba(5, 6, 8, 0.55)
+        ),
+        linear-gradient(135deg, rgba(255, 204, 102, 0.26), rgba(255, 214, 128, 0.18));
+      border: 1px solid rgba(255, 204, 102, 0.28);
+      color: var(--orange-yellow-crayola, #ffcc66);
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: transform 150ms ease, border-color 150ms ease, background 150ms ease, box-shadow 150ms ease;
+    }
+
+    .projects-quick-nav-sidebar__link:hover,
+    .projects-quick-nav-sidebar__link:focus-visible {
+      transform: translateY(-1px);
+      border-color: rgba(255, 214, 128, 0.5);
+      background: linear-gradient(
+          rgba(15, 17, 21, 0.65),
+          rgba(15, 17, 21, 0.65)
+        ),
+        linear-gradient(135deg, rgba(255, 214, 128, 0.42), rgba(255, 230, 163, 0.36));
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+      outline: none;
+    }
+
+    .projects-quick-nav-sidebar__link:focus-visible {
+      box-shadow: 0 0 0 3px rgba(255, 204, 102, 0.35);
+    }
+
+    .contact .h3.article-title {
+      padding-bottom: 0;
+    }
+
+    .contact .h3.article-title::after {
+      display: none;
+    }
+
+    #deliverables {
+      grid-template-columns: 1fr;
+    }
+
+    .info-attachments-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.9rem;
+      margin-top: 1rem;
+    }
+
+    .info-attachments-grid .info-attachment {
+      margin: 0;
+    }
+
+    @media (max-width: 900px) {
+      .info-attachments-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      }
+    }
+
+    .floating-back-btn {
+      position: fixed;
+      right: clamp(16px, 3vw, 32px);
+      bottom: clamp(16px, 3vw, 32px);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.85rem 1.4rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 204, 102, 0.36);
+      background:
+        linear-gradient(135deg, rgba(255, 214, 128, 0.85), rgba(255, 204, 102, 0.95)),
+        rgba(15, 17, 21, 0.92);
+      color: #1a1d23;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      box-shadow: 0 18px 36px rgba(0, 0, 0, 0.32);
+      z-index: 10000;
+      transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background 180ms ease;
+    }
+
+    .floating-back-btn:hover,
+    .floating-back-btn:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.38);
+      border-color: rgba(255, 226, 170, 0.9);
+      background:
+        linear-gradient(135deg, rgba(255, 226, 170, 0.95), rgba(255, 204, 102, 1)),
+        rgba(15, 17, 21, 0.92);
+      outline: none;
+    }
+
+    .floating-back-btn:focus-visible {
+      box-shadow: 0 0 0 3px rgba(255, 204, 102, 0.45), 0 24px 48px rgba(0, 0, 0, 0.38);
+    }
+
+    .floating-back-btn ion-icon {
+      font-size: 1.1rem;
+      color: inherit;
+    }
+
+    .floating-scroll-top-btn {
+      position: fixed;
+      left: clamp(16px, 3vw, 32px);
+      bottom: clamp(16px, 3vw, 32px);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.85rem 1.4rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 204, 102, 0.36);
+      background:
+        linear-gradient(135deg, rgba(255, 214, 128, 0.9), rgba(255, 204, 102, 0.98)),
+        rgba(15, 17, 21, 0.92);
+      color: #1a1d23;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      box-shadow: 0 18px 36px rgba(0, 0, 0, 0.32);
+      z-index: 10000;
+      transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background 180ms ease, opacity 200ms ease;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .floating-scroll-top-btn.is-visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .floating-scroll-top-btn:hover,
+    .floating-scroll-top-btn:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.38);
+      border-color: rgba(255, 226, 170, 0.9);
+      background:
+        linear-gradient(135deg, rgba(255, 226, 170, 0.95), rgba(255, 204, 102, 1)),
+        rgba(15, 17, 21, 0.92);
+      outline: none;
+    }
+
+    .floating-scroll-top-btn:focus-visible {
+      box-shadow: 0 0 0 3px rgba(255, 204, 102, 0.45), 0 24px 48px rgba(0, 0, 0, 0.38);
+    }
+
+    .floating-scroll-top-btn ion-icon {
+      font-size: 1.1rem;
+      color: inherit;
+    }
+
+    @media (max-width: 640px) {
+      .floating-back-btn {
+        top: clamp(12px, 5vw, 20px);
+        right: clamp(12px, 6vw, 20px);
+        bottom: auto;
+        padding: 0.6rem 1rem;
+        gap: 0.3rem;
+        font-size: 0.8rem;
+        letter-spacing: 0.06em;
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.28);
+      }
+
+      .floating-back-btn ion-icon {
+        font-size: 0.95rem;
+      }
+
+      .floating-scroll-top-btn {
+        top: clamp(12px, 5vw, 20px);
+        bottom: auto;
+        left: clamp(12px, 5vw, 20px);
+        padding: 0.6rem 1rem;
+        gap: 0.3rem;
+        font-size: 0.8rem;
+        letter-spacing: 0.06em;
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.28);
+      }
+
+      .floating-scroll-top-btn ion-icon {
+        font-size: 0.95rem;
+      }
+    }
+
+    @media (min-width: 641px) and (max-width: 1024px) {
+      .floating-back-btn,
+      .floating-scroll-top-btn {
+        top: auto;
+        bottom: clamp(16px, 3vw, 32px);
+        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
+      }
+
+      .floating-back-btn {
+        right: clamp(16px, 4vw, 32px);
+      }
+
+      .floating-scroll-top-btn {
+        left: clamp(16px, 4vw, 32px);
+      }
+    }
+
+  </style>
+  <style>
+    .floating-cta {
+      position: fixed;
+      bottom: clamp(18px, 4vw, 48px);
+      left: 50%;
+      transform: translate(-50%, 12px);
+      display: flex;
+      gap: clamp(12px, 2.8vw, 20px);
+      z-index: 10010;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 200ms ease, transform 200ms ease;
+    }
+
+    .floating-cta.is-visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translate(-50%, 0);
+    }
+
+    .floating-cta-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+      padding: 0.85rem 1.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 204, 102, 0.4);
+      background:
+        linear-gradient(135deg, rgba(255, 226, 170, 0.96), rgba(255, 204, 102, 1)),
+        rgba(15, 17, 21, 0.92);
+      color: #1a1d23;
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      box-shadow: 0 18px 36px rgba(0, 0, 0, 0.28);
+      transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background 180ms ease;
+    }
+
+    .floating-cta-button:hover,
+    .floating-cta-button:focus-visible {
+      transform: translateY(-2px);
+      border-color: rgba(255, 226, 170, 0.9);
+      background:
+        linear-gradient(135deg, rgba(255, 233, 188, 0.98), rgba(255, 214, 128, 1)),
+        rgba(15, 17, 21, 0.92);
+      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.34);
+      outline: none;
+    }
+
+    .floating-cta-button:focus-visible {
+      box-shadow:
+        0 0 0 3px rgba(255, 204, 102, 0.45),
+        0 24px 48px rgba(0, 0, 0, 0.34);
+    }
+
+    body.light-mode .floating-cta-button {
+      background:
+        linear-gradient(135deg, rgba(255, 244, 218, 0.98), rgba(255, 230, 176, 0.96));
+      border: 1px solid rgba(205, 150, 45, 0.45);
+      color: #3b2a00;
+      box-shadow: 0 18px 34px rgba(205, 160, 60, 0.18);
+    }
+
+    body.light-mode .floating-cta-button:hover,
+    body.light-mode .floating-cta-button:focus-visible {
+      background:
+        linear-gradient(135deg, rgba(255, 236, 174, 0.98), rgba(255, 215, 120, 0.96));
+      border-color: rgba(205, 150, 45, 0.65);
+      color: #2d1e00;
+    }
+
+    @media (min-width: 641px) and (max-width: 1024px) {
+      .floating-cta {
+        gap: clamp(10px, 2vw, 18px);
+      }
+
+      .floating-cta-button {
+        padding: 0.65rem 1.9rem;
+        border-radius: 999px;
+        font-size: 0.82rem;
+        letter-spacing: 0.04em;
+        min-width: 240px;
+      }
+
+      .floating-cta-button:nth-child(-n + 2) {
+        display: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .floating-cta {
+        flex-direction: column;
+        align-items: center;
+        width: min(90vw, 380px);
+        padding-bottom: 48px;
+      }
+
+      .floating-cta-button {
+        width: 100%;
+        text-align: center;
+        font-size: 0.82rem;
+        padding: 0.7rem 1.2rem;
+      }
+
+      .floating-cta-button:nth-child(-n + 2) {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body class="tablet-stacked light-mode">
+
+  <!-- CONTROL: Global theme toggle (light/dark switch) -->
+  <button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch to light mode">
+    <span class="theme-toggle__pill" aria-hidden="true">
+      <span class="theme-toggle__option theme-toggle__option--sun">
+        <span class="theme-toggle__icon-wrap theme-toggle__icon-wrap--sun">
+          <img
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23f5a623' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='4' fill='%23f5a623' stroke='%23f5a623'/%3E%3Cline x1='12' y1='2' x2='12' y2='5'/%3E%3Cline x1='12' y1='19' x2='12' y2='22'/%3E%3Cline x1='4.22' y1='4.22' x2='6.34' y2='6.34'/%3E%3Cline x1='17.66' y1='17.66' x2='19.78' y2='19.78'/%3E%3Cline x1='2' y1='12' x2='5' y2='12'/%3E%3Cline x1='19' y1='12' x2='22' y2='12'/%3E%3Cline x1='4.22' y1='19.78' x2='6.34' y2='17.66'/%3E%3Cline x1='17.66' y1='6.34' x2='19.78' y2='4.22'/%3E%3C/svg%3E"
+            alt=""
+            width="24"
+            height="24"
+            decoding="async"
+            loading="lazy"
+            aria-hidden="true"
+            data-lightbox-disabled="true"
+          >
+        </span>
+      </span>
+      <span class="theme-toggle__option theme-toggle__option--moon">
+        <span class="theme-toggle__icon-wrap theme-toggle__icon-wrap--moon">
+          <img
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23f5a623' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath fill='%23f5a623' stroke='%23f5a623' d='M21 12.79A9 9 0 0 1 11.21 3 7 7 0 0 0 12 21a7 7 0 0 0 9-8.21Z'/%3E%3C/svg%3E"
+            alt=""
+            width="24"
+            height="24"
+            decoding="async"
+            loading="lazy"
+            aria-hidden="true"
+            data-lightbox-disabled="true"
+          >
+        </span>
+      </span>
+      <span class="theme-toggle__indicator"></span>
+    </span>
+  </button>
+
+  <!--
+    PAGE MAP — blogpage.html
+    Long-form blog article layout overview.
+
+    SIDEBAR (shared)     → Profile details & contact links
+    .projects-quick-nav-sidebar → "On this page" table of contents
+
+    MAIN CONTENT
+      #core-identity     → Article title, author, publish info
+      #project-overview  → Introduction / summary paragraphs
+      #deliverables      → Download links or related resources
+      #media-visuals     → Article image gallery (lightbox-enabled)
+      #image-lightbox    → Hidden overlay for full-size media
+
+    GLOBAL CONTROLS
+      [data-theme-toggle] → Theme toggle (persists preference via script.js)
+
+    FLOATING UI
+      .floating-scroll-top-btn → Page-up helper (reveals after deep scroll, reduced-motion aware)
+      .floating-back-btn       → Returns to previous history entry or blog listing fallback
+      .floating-cta            → Quick links to resume, portfolio, contact pages
+  -->
+
+  <main>
+    <!-- SECTION: Sidebar profile, contacts, and quick nav -->
+    <aside class="sidebar" data-sidebar>
+      <div class="sidebar-info">
+        <figure class="avatar-box">
+          <img src="./assets/images/core/myavatar.png" alt="Saurabhs Saini" width="80">
+        </figure>
+
+        <div class="info-content">
+          <h1 class="name" title="Saurabhsa Saini">Saurabh Saini</h1>
+          <p class="title">Instructional Designer</p>
+        </div>
+
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+      </div>
+
+      <div class="sidebar-info_more">
+        <div class="separator"></div>
+
+        <!-- LIST: Update contact/social info -->
+        <ul class="contacts-list">
+          <li class="contact-item">
+            <div class="icon-box">
+              <img src="assets/images/icons/ICON-GMAIL.png" alt="Icon" class="contact-icon">
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+              <a href="mailto:saurabhsaini789@gmail.com" class="contact-link">saurabhsaini789@gmail.com</a>
+            </div>
+          </li>
+
+          <li class="contact-item">
+            <div class="icon-box">
+              <img src="assets/images/icons/ICON-CALL.png" alt="Icon" class="contact-icon">
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Phone</p>
+              <a href="tel:+19057812687" class="contact-link">+1 (905) 781-2687</a>
+            </div>
+          </li>
+
+          <li class="contact-item">
+            <div class="icon-box">
+              <img src="assets/images/icons/ICON-LINKEDIN.png" alt="Icon" class="contact-icon">
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">LinkedIn</p>
+              <a href="https://www.linkedin.com/in/iamsaurabhsaini/" class="contact-link" target="_blank" rel="noopener noreferrer">@iamsaurabhsaini</a>
+            </div>
+          </li>
+
+          <li class="contact-item">
+            <div class="icon-box">
+              <img src="assets/images/icons/ICON-YT.png" alt="YouTube icon" class="contact-icon">
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">YouTube</p>
+              <a href="https://www.youtube.com/@iamsaurabhsaini" class="contact-link" target="_blank" rel="noopener noreferrer">@iamsaurabhsaini</a>
+            </div>
+          </li>
+
+          <li class="contact-item">
+            <div class="icon-box">
+              <img src="assets/images/icons/ICON-INSTA.png" alt="Icon" class="contact-icon">
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Instagram</p>
+              <a href="https://www.instagram.com/createwithsaurabh/" class="contact-link" target="_blank" rel="noopener noreferrer">@createwithsaurabh</a>
+            </div>
+          </li>
+
+          <li class="contact-item">
+            <div class="icon-box">
+              <img src="assets/images/icons/ICON-X.png" alt="Icon" class="contact-icon">
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Twitter</p>
+              <a href="https://x.com/itssaurabhsaini" class="contact-link" target="_blank" rel="noopener noreferrer">@itssaurabhsaini</a>
+            </div>
+          </li>
+
+          <li class="contact-item">
+            <div class="icon-box">
+              <img src="assets/images/icons/ICON-CALENDAR.png" alt="Icon" class="contact-icon">
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Birthday</p>
+              <time datetime="1996-07-23">July 23, 1996</time>
+            </div>
+          </li>
+
+          <li class="contact-item">
+            <div class="icon-box">
+              <img src="assets/images/icons/ICON-LOCATION.png" alt="Icon" class="contact-icon">
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Location</p>
+              <address>Winnipeg, Manitoba, CA</address>
+            </div>
+          </li>
+        </ul>
+
+        <div class="separator"></div>
+
+        
+      </div>
+    </aside>
+
+    <div class="main-content">
+      <!-- NAVIGATION: Switch to other site pages -->
+      <nav class="navbar">
+        <ul class="navbar-list">
+          <li class="navbar-item">
+            <a class="navbar-link" data-nav-link data-nav-target="about" href="index.html">About</a>
+          </li>
+          <li class="navbar-item">
+            <a class="navbar-link" data-nav-link data-nav-target="resume" href="resume.html">Resume</a>
+          </li>
+          <li class="navbar-item">
+            <a class="navbar-link" data-nav-link data-nav-target="portfolio" href="portfolio.html">Portfolio</a>
+          </li>
+          <li class="navbar-item">
+            <a class="navbar-link" data-nav-link data-nav-target="learning hub" href="learning-hub.html">Learning Hub</a>
+          </li>
+          <li class="navbar-item">
+            <a class="navbar-link active" data-nav-link data-nav-target="blog" href="blog.html">Blog</a>
+          </li>
+          <li class="navbar-item">
+            <a class="navbar-link" data-nav-link data-nav-target="contact" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </nav>
+
+
+      
+
+      <!-- PAGE SECTION: Blog article content -->
+      <article class="contact blog active" data-page="blog">
+        <header>
+          <h2 class="h2 article-title">Blog #1</h2>
+        </header>
+
+        <!--
+        - #PROJECT TEAMPLTE - CORE IDENTITY - FIRST HEADING 
+        -->
+
+        <section class="content-block">
+        <!-- GRID: Article identity details -->
+        <div class="info-grid" id="core-identity">
+          <div class="core-identity-item">
+            <span class="info-label">Title</span>
+            <span class="info-value">Main Container Experience</span>
+          </div>
+          <div class="core-identity-item">
+            <span class="info-label">Category</span>
+            <span class="info-value">Lead Front-End Developer</span>
+          </div>
+          <div class="core-identity-item">
+            <span class="info-label">Date Published</span>
+            <span class="info-value">Q3 2024</span>
+          </div>
+                 
+                   
+
+        </div>
+
+
+
+        <!-- GRID: Article overview and key points -->
+        <div class="info-grid" id="project-overview">
+          <h3 class="h3 article-title">Project Overview</h3>
+          <div class="info-group">
+            <span class="info-label">Overview</span>
+            <span class="info-value">
+              A modular single-page layout that mirrors the primary site experience while giving space for deep-dive case studies, long-form storytelling, and interactive embeds.
+            </span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Problem / Opportunity / Need</span>
+            <span class="info-value">
+              Showcase complex projects in a standalone environment without losing the visual identity or responsive behavior of the core portfolio.
+            </span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Target Audience</span>
+            <span class="info-value">
+              Prospective clients, hiring managers, and collaborators evaluating design process, technical depth, and narrative clarity across flagship engagements.
+            </span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Scope / Boundaries</span>
+            <span class="info-value">
+              Focused on front-end presentation, reusable content blocks, and integration with existing brand assets; excludes backend service work or CMS authoring workflows.
+            </span>
+
+            <div class="info-value">
+              <table class="info-table">
+                <thead>
+                  <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Primary Pages</th>
+                    <th scope="col">Secondary Pages</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Top-Level</th>
+                    <td>Homepage</td>
+                    <td>Landing Variants</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Support</th>
+                    <td>Help Center</td>
+                    <td>FAQs</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Engagement</th>
+                    <td>Community Hub</td>
+                    <td>Events Calendar</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+        </div>
+
+             
+      
+
+        <!-- GRID: Downloadable resources or references -->
+        <div class="info-grid" id="deliverables">
+          <h3 class="h3 article-title">Deliverables</h3>
+          <div class="info-group">
+            <span class="info-label">Final Learning Solution (module, storyboard, SCORM) (Instructional Design)</span>
+            <span class="info-value">
+              Packaged the complete learning solution with SCORM-compliant modules, facilitator guides, and storyboard archives.
+            </span>
+            <div class="info-attachments-grid">
+              <div class="info-attachment">
+                <a
+                  class="info-attachment-link"
+                  href="assets/images/Template.docx"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Resume Template
+                </a>
+              </div>
+              <div class="info-attachment">
+                <a
+                  class="info-attachment-link"
+                  href="assets/images/Resume_Saurabh_Saini.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Resume Saurabh Saini
+                </a>
+              </div>
+              <div class="info-attachment">
+                <a
+                  class="info-attachment-link"
+                  href="assets/images/project-1.jpg"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Project Timeline
+                </a>
+              </div>
+            </div>
+          </div>
+                  
+        </div>
+
+        
+
+          <!-- GRID: Media gallery thumbnails -->
+          <div class="info-grid" id="media-visuals">
+            <h3 class="h3 article-title">Media &amp; Visuals</h3>
+            <div class="media-grid">
+              <div class="media-row media-row--single">
+                <div class="media-placeholder media-placeholder--primary" aria-label="Full-width media placeholder">
+                  <img src="assets/images/project-1.jpg" alt="Placeholder project visual 1">
+                </div>
+                <div class="media-placeholder media-placeholder--primary media-placeholder--video" aria-label="Watch this project video on YouTube">
+                  <a
+                    class="media-video-link"
+                    href="https://www.youtube.com/watch?v=6M7Ki1JkzpE"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src="https://img.youtube.com/vi/6M7Ki1JkzpE/hqdefault.jpg"
+                      alt="YouTube video thumbnail"
+                      loading="lazy"
+                    >
+                    <span class="media-video-play" aria-hidden="true"></span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="media-row media-row--double">
+                <div class="media-placeholder" aria-label="Half-width media placeholder">
+                  <img src="assets/images/project-3.jpg" alt="Placeholder project visual 2">
+                </div>
+                <div class="media-placeholder media-placeholder--video" aria-label="Watch this project video on YouTube">
+                  <a
+                    class="media-video-link"
+                    href="https://www.youtube.com/watch?v=6M7Ki1JkzpE"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src="https://img.youtube.com/vi/6M7Ki1JkzpE/hqdefault.jpg"
+                      alt="YouTube video thumbnail"
+                      loading="lazy"
+                    >
+                    <span class="media-video-play" aria-hidden="true"></span>
+                  </a>
+                </div>
+                <div class="media-placeholder" aria-label="Half-width media placeholder">
+                  <img src="assets/images/project-3.jpg" alt="Placeholder project visual 3">
+                </div>
+                <div class="media-placeholder" aria-label="Half-width media placeholder">
+                  <img src="assets/images/project-3.jpg" alt="Placeholder project visual 4">
+                </div>
+              </div>
+              <div class="media-row media-row--triple">
+                <div class="media-placeholder" aria-label="Third-width media placeholder">
+                  <img src="assets/images/project-3.jpg" alt="Placeholder project visual 5">
+                </div>
+                <div class="media-placeholder" aria-label="Third-width media placeholder">
+                  <img src="assets/images/project-3.jpg" alt="Placeholder project visual 6">
+                </div>
+                <div class="media-placeholder media-placeholder--video" aria-label="Watch this project video on YouTube">
+                  <a
+                    class="media-video-link"
+                    href="https://www.youtube.com/watch?v=1aEtHPUzi24"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src="https://img.youtube.com/vi/1aEtHPUzi24/hqdefault.jpg"
+                      alt="Watch this project video on YouTube"
+                      loading="lazy"
+                    >
+                    <span class="media-video-play" aria-hidden="true"></span>
+                  </a>
+                </div>
+                <div class="media-placeholder" aria-label="Third-width media placeholder">
+                  <img src="assets/images/project-3.jpg" alt="Placeholder project visual 7">
+                </div>
+                <div class="media-placeholder" aria-label="Third-width media placeholder">
+                  <img src="assets/images/project-3.jpg" alt="Placeholder project visual 8">
+                </div>
+              </div>
+            </div>
+          </div>
+
+        
+
+      </article>
+    </div>
+  </main>
+
+  <!-- BUTTON: Page-up helper (reveals after deep scroll, honors reduced motion) -->
+  <button
+    type="button"
+    class="floating-scroll-top-btn"
+    data-scroll-top-btn
+    aria-label="Back to top"
+  >
+    <ion-icon name="arrow-up-outline" aria-hidden="true"></ion-icon>
+    <span>Top</span>
+  </button>
+  <!-- BUTTON: Back to previous page -->
+  <button type="button" class="floating-back-btn" data-floating-back-btn aria-label="Go back to previous page">
+    <ion-icon name="arrow-back-outline" aria-hidden="true"></ion-icon>
+    <span>Go Back</span>
+  </button>
+
+  <!-- CTA CLUSTER: Floating quick actions -->
+  <div class="floating-cta" data-floating-cta hidden>
+    <!-- CTA: Resume overview -->
+    <a class="floating-cta-button" href="resume.html" data-nav-target="resume">Learn More About Me</a>
+    <!-- CTA: Portfolio showcase -->
+    <a class="floating-cta-button" href="portfolio.html" data-nav-target="portfolio">Explore Projects</a>
+    <!-- CTA: Contact inquiry -->
+    <a class="floating-cta-button" href="contact.html" data-nav-target="contact">Let's Work Together</a>
+  </div>
+
+  <!-- RESOURCE: Core interactivity -->
+  <script src="./assets/js/script.js"></script>
+  <!-- SCRIPT: Floating button behavior -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const floatingBackBtn = document.querySelector('[data-floating-back-btn]');
+      const scrollTopBtn = document.querySelector('[data-scroll-top-btn]');
+      let scrollDepthSegments = 0;
+
+      if (floatingBackBtn) {
+        floatingBackBtn.addEventListener('click', () => {
+          if (window.history.length > 1) {
+            window.history.back();
+          } else {
+            window.location.href = 'blog.html';
+          }
+        });
+      }
+
+      const toggleScrollTopBtn = (shouldShow) => {
+        if (!scrollTopBtn) {
+          return;
+        }
+
+        if (shouldShow) {
+          scrollTopBtn.classList.add('is-visible');
+        } else {
+          scrollTopBtn.classList.remove('is-visible');
+        }
+      };
+
+      if (scrollTopBtn) {
+        window.addEventListener('scroll', () => {
+          const currentY = window.scrollY;
+          const newSegments = Math.floor(currentY / window.innerHeight);
+
+          if (newSegments !== scrollDepthSegments) {
+            scrollDepthSegments = newSegments;
+            if (scrollDepthSegments >= 3) {
+              toggleScrollTopBtn(true);
+            }
+          }
+
+          if (currentY <= 80) {
+            toggleScrollTopBtn(false);
+          }
+        }, { passive: true });
+
+        scrollTopBtn.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+    });
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const floatingCta = document.querySelector('[data-floating-cta]');
+
+      if (!floatingCta) {
+        return;
+      }
+
+      let hasActivatedFloatingCta = false;
+      let isFloatingCtaVisible = false;
+      let lastScrollY = window.scrollY;
+      let ctaTimeoutId = null;
+
+      const showFloatingCta = () => {
+        if (isFloatingCtaVisible) {
+          return;
+        }
+
+        floatingCta.classList.add('is-visible');
+        floatingCta.removeAttribute('hidden');
+        isFloatingCtaVisible = true;
+      };
+
+      const hideFloatingCta = () => {
+        if (!isFloatingCtaVisible) {
+          return;
+        }
+
+        floatingCta.classList.remove('is-visible');
+        floatingCta.setAttribute('hidden', '');
+        isFloatingCtaVisible = false;
+      };
+
+      const activateFloatingCta = () => {
+        if (hasActivatedFloatingCta) {
+          showFloatingCta();
+          return;
+        }
+
+        hasActivatedFloatingCta = true;
+        showFloatingCta();
+
+        if (ctaTimeoutId) {
+          window.clearTimeout(ctaTimeoutId);
+          ctaTimeoutId = null;
+        }
+      };
+
+      ctaTimeoutId = window.setTimeout(() => {
+        activateFloatingCta();
+      }, 7000);
+
+      const handleFloatingCtaScroll = () => {
+        const currentScrollY = window.scrollY;
+
+        if (!hasActivatedFloatingCta && currentScrollY > 0) {
+          activateFloatingCta();
+        }
+
+        if (!hasActivatedFloatingCta) {
+          lastScrollY = currentScrollY;
+          return;
+        }
+
+        if (currentScrollY < lastScrollY && currentScrollY <= 120) {
+          hideFloatingCta();
+        } else if (currentScrollY > 160) {
+          showFloatingCta();
+        }
+
+        lastScrollY = currentScrollY;
+      };
+
+      window.addEventListener('scroll', handleFloatingCtaScroll, { passive: true });
+
+      const ACTIVE_PAGE_KEY = 'active-page';
+      const SCROLL_POSITION_KEY = 'page-scroll-position';
+      const SKIP_SCROLL_RESTORE_KEY = 'skip-scroll-restore';
+
+      const storeNavTargetForLink = (link) => {
+        if (!(link instanceof HTMLAnchorElement)) {
+          return;
+        }
+
+        try {
+          const navTarget = (link.dataset.navTarget || '').trim().toLowerCase();
+
+          if (typeof sessionStorage !== 'undefined') {
+            if (navTarget) {
+              sessionStorage.setItem(ACTIVE_PAGE_KEY, navTarget);
+            } else {
+              sessionStorage.removeItem(ACTIVE_PAGE_KEY);
+            }
+
+            sessionStorage.setItem(SKIP_SCROLL_RESTORE_KEY, 'true');
+            sessionStorage.removeItem(SCROLL_POSITION_KEY);
+          }
+        } catch (error) {
+          // Ignore storage errors.
+        }
+      };
+
+      const ctaLinks = floatingCta.querySelectorAll('a[href]');
+      ctaLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+          storeNavTargetForLink(link);
+        });
+      });
+    });
+  </script>
+  <!-- RESOURCE: Icon library -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
