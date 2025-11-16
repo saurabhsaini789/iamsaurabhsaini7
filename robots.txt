@@ -1,0 +1,6 @@
+# robots.txt for iamsaurabhsaini.com
+User-agent: *
+Allow: /
+
+Sitemap: https://iamsaurabhsaini.com/sitemap.xml
+

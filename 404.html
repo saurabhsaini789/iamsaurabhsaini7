@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found · iamsaurabhsaini</title>
+  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+  <link rel="icon" href="./favicon.ico" type="image/png">
+  <link rel="apple-touch-icon" href="./favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <style>
+    /* ------------------------------------------------------------
+      LAYOUT: Global fallbacks for the standalone 404 document
+    ------------------------------------------------------------- */
+    :root {
+      color-scheme: light dark;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background:
+        radial-gradient(circle at top, rgba(255, 153, 102, 0.35), rgba(255, 94, 98, 0.25)),
+        var(--smoky-black, #0f0f10);
+      font-family: 'Poppins', sans-serif;
+      color: var(--white, #ffffff);
+      text-align: center;
+      padding: 48px 16px;
+    }
+
+    /* ------------------------------------------------------------
+      COMPONENT: Frosted glass error card
+    ------------------------------------------------------------- */
+    .error-card {
+      position: relative;
+      max-width: 540px;
+      width: 100%;
+      padding: 48px 40px;
+      border-radius: 24px;
+      backdrop-filter: blur(18px);
+      background: rgba(25, 25, 28, 0.7);
+      box-shadow: 0 32px 64px rgba(0, 0, 0, 0.35);
+    }
+
+    .error-glow {
+      position: absolute;
+      inset: -24px;
+      border-radius: inherit;
+      background: linear-gradient(
+        135deg,
+        rgba(255, 178, 102, 0.45),
+        rgba(255, 94, 148, 0.45),
+        rgba(88, 101, 242, 0.45)
+      );
+      opacity: 0.6;
+      filter: blur(36px);
+      z-index: -1;
+    }
+
+    /* ------------------------------------------------------------
+      TYPOGRAPHY: Headline + supporting copy
+    ------------------------------------------------------------- */
+    .error-code {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      font-size: clamp(72px, 14vw, 152px);
+      font-weight: 700;
+      letter-spacing: 4px;
+      color: var(--orange-yellow-crayola, #f5a623);
+      text-shadow: 0 18px 32px rgba(245, 166, 35, 0.35);
+      margin-bottom: 16px;
+    }
+
+    .error-title {
+      font-size: clamp(24px, 5vw, 36px);
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .error-description {
+      font-size: clamp(16px, 3.4vw, 18px);
+      font-weight: 300;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 32px;
+    }
+
+    /* ------------------------------------------------------------
+      ACTIONS: Button cluster directing visitors back on track
+    ------------------------------------------------------------- */
+    .cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .cta-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 999px;
+      background: rgba(15, 15, 16, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--white, #ffffff);
+      font-weight: 500;
+      text-decoration: none;
+      transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .cta-link:hover,
+    .cta-link:focus-visible {
+      background: linear-gradient(135deg, rgba(255, 178, 102, 0.85), rgba(255, 94, 148, 0.85));
+      box-shadow: 0 18px 30px rgba(255, 140, 110, 0.36);
+      transform: translateY(-2px);
+    }
+
+    .cta-link svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
+    footer {
+      margin-top: 32px;
+      font-size: 14px;
+      opacity: 0.65;
+    }
+
+    @media (max-width: 520px) {
+      .error-card {
+        padding: 40px 28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!--
+    PAGE MAP — 404.html
+    .error-card → Headline + guidance actions
+      .cta-group → Primary recovery paths back into the site
+    footer     → Secondary call-to-action for collaboration
+  -->
+
+  <!-- CARD: Error summary + suggested destinations -->
+  <div class="error-card" role="alert" aria-live="assertive">
+    <div class="error-glow" aria-hidden="true"></div>
+    <div class="error-code">404</div>
+    <h1 class="error-title">Oops! Page not found.</h1>
+    <p class="error-description">
+      The page you&apos;re looking for has moved, been renamed, or never existed. Let me guide you back to the good stuff.
+    </p>
+
+    <!-- NAVIGATION: Primary recovery links -->
+    <nav class="cta-group" aria-label="Primary actions">
+      <a class="cta-link" href="index.html" data-track="cta-home">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 3.172 2 12h3v8h6v-5h2v5h6v-8h3z" />
+        </svg>
+        Back to Home
+      </a>
+      <a class="cta-link" href="portfolio.html" data-track="cta-portfolio">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4 6h16v2H4zm2 4h12l-1.2 10H7.2zm2.4-6 1.2-2h4.8l1.2 2z" />
+        </svg>
+        View Portfolio
+      </a>
+      <a class="cta-link" href="contact.html" data-track="cta-contact">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4 4h16v12H5.17L4 17.17zm8 5 8-5H4z" />
+        </svg>
+        Contact Me
+      </a>
+    </nav>
+  </div>
+
+  <!-- FOOTER: Secondary prompt to reconnect -->
+  <footer>
+    Want to collaborate? <a href="contact.html" class="cta-link" style="padding: 6px 14px;">Get in Touch</a>.
+  </footer>
+</body>
+
+</html>
+
